@@ -9,6 +9,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
 import logging
 import datetime
+import os
 
 app = Flask(__name__)
 
@@ -247,4 +248,5 @@ def get_current_user():
 if __name__ == '__main__':
     #drop_tables()
     #create_tables()
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
