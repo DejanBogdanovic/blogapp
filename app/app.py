@@ -69,7 +69,7 @@ class RegistrationForm(Form):
 # simple utility function to create tables **
 def create_tables():
     database.connect()
-    database.create_tables([Blog])
+    database.create_tables([User])
 
 # simple utility function to drop tables **
 def drop_tables():
