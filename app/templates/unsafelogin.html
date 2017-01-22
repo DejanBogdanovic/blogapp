@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block  body %}
+
+<div class="content mdl-layout__content">
+   <div class="mdl-typography--text-center">
+      <div class="mdl-grid">
+         <form method=post action="/unsafelogin">
+            <div class="mdl-cell mdl-cell--5-col mdl-cell--7-offset">
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="email" id="email" name="email">
+                  <label class="mdl-textfield__label" for="email">E-Mail</label>
+               </div>
+            </div>
+            <div class="mdl-cell mdl-cell--5-col mdl-cell--7-offset">
+               <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input class="mdl-textfield__input" type="password" id="password" name="password">
+                  <label class="mdl-textfield__label" for="password">Password</label>
+               </div>
+            </div>
+            <div class="mdl-cell mdl-cell--5-col mdl-cell--7-offset">
+               <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                  Login
+               </button>
+            </div>
+         </form>
+      </div>
+   </div>
+</div>
+
+{% endblock body %}

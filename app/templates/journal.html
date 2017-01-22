@@ -1,0 +1,191 @@
+{% extends 'layout.html' %}
+
+{% block  body %}
+
+<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+   <div class="demo-blog__posts mdl-grid">
+      <h1>Arbeitsjournal</h1>
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>18.11.2016</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Als wir den Auftrag bekommen haben ein Portfolio zu machen, war ich zu beginn sehr verwirrt. Ich dachte wir müssen ein Portfolio <br/>
+            schreiben welches aufzeigt, an welchen Projekten und mit welchen Technologien wir bisher gearbeitet haben. Dieses Missverständniss <br/>
+            war leider erst gegen Ende des Tages aus der Welt geschafft, sodass ich an diesem Tag lediglich ein wenig überlegt habe, <br/>
+            mit welcher Programmiersprache ich das Ganze machen möchte.
+            </p>
+         </div>
+      </div>
+   </div>
+   <div class="demo-blog__posts mdl-grid">
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>25.11.2016</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Am zweiten Tag hatte ich meine Favoriten bezüglich Programmiersprachen festgelegt: PHP und Python. Ich habe mich <br/>
+            dementsprechend ein wenig über beide Sprachen erkundigt, welches Ihre Vor- und Nachteile sind etc. <br/>
+            Da ich bisher nicht so viel mit PHP gearbeitet habe, im Betrieb aber schon eine Ganze Applikation mit Python <br/>
+            entwickelt habe fiel die Wahl dann auch auf Python. Da man mit Python selber nicht so gut Webseiten bauen kann, <br/>
+            musste ich noch ein Framework dafür auswählen. Im Betrieb habe ich mit Django gearbeitet, <br/>
+            dies ist aber ein recht umfassendes Framework und ich war der Meinung, dass es für ein so kleines Projekt einfach zu viel wäre.<br/>
+            Yves hat mich dann auf Flask aufmerksam gemacht und als ich mich darüber erkundigt habe merkte ich schnell, <br/>
+            dass dies mein Framework für diese Projekt sein wird.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>02.12.2016</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Nun ging es darum, ein Projekt aufzusetzen. Dies ging leider nicht so wie ich es wollte. Es gab zwar auf der <br/>
+            offiziellen Seite von Flask eine Installationsanleitung, welche ich auch befolgt habe, doch es wollte nicht klappen.<br/>
+            Es wurde mir immer die Meldung angezeigt, ich hätte ein Paket nicht runtergeladen. Wenn ich nun versucht habe dieses <br/>
+            Paket herunterzuladen kam die Meldung, dieses Paket wurde bereits heruntergeladen. Dies ging den ganzen Tag so. <br/>
+            Ich habe auch einige Male das Projekt gelöscht und neu angefangen, gebracht hats leider nichts. <br/>
+            Ich musste den Tag mit diesem Problem auch leider beenden.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>09.12.2016</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Dort wo es letzte Woche aufgehört hat, ging es in dieser Woche weiter. Es konnte einfach nicht das Paket finden, <br/>
+            welches ich für die Datenbank brauche. Ich habe mich also entschlossen Mal ohne diese Paket fortzufahren und mir zu überlegen, <br/>
+            was für ein Projekt ich nun realisieren möchte. Ich wollte zuerst eine Chatapp machen, doch mir wurde davon <br/>
+            abgeraten, da es sehr schwierig sei. Ich habe auf den lieb gemeinten Rat gehört und mir eine andere Idee überlegt. <br/>
+            Da ich nebenbei Templates gesucht habe für meine Seite, fand ich ein Template für eine Blog-Webseite. <br/>
+            So habe ich mich entschieden eine Blogapp zu schreiben.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>16.12.2016</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Da ich ein bereits ein Template für die Webseite hatte ging es darum, es meinen Bedürfnissen anzupassen. <br/>
+            Da das Template keine Navigation hatte, musste ich diese noch einfügen. Ich habe mich auch entschieden, <br/>
+            gewisse Dinge im HTML auszulagern. So habe ich ein layout.html geschrieben, welches die Navigation beeinhaltet. <br/>
+            So muss ich bei Änderungen in der Navigation die Anpassungen nur an einer Stelle vornehmen und nicht über <br/>
+            alle meine HTML-Seiten gehen und dort suchen und anpassen. Nebenbei habe ich im Backend angefangen mit den Basics, <br/>
+            dass auf die richtige Seite weitergeleitet wird abhängig von der URL. Dies geht mit Flask sehr einfach, <br/>
+            da man für jede Methode einen URL-Pfad definieren, sprich bei diesem Pfad wird dann diese Methode ausgeführt.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>23.12.2016</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Da es nun langsam darum ging, dass Backend zu erweitern musste ich mich wohl oder übel dem alten Problem stellen. <br/>
+            Ich habe vorsichtshalber eine Kopie des Projektes erstellt, für den Fall, dass alles kaputt mache.<br/>
+            Ich habe also probiert, dass Paket noch einmal einzubauen im Projekt und es ging wieder nicht, was für eine Überraschung. <br/>
+            Also habe ich das Projekt wieder gelöscht und neu aufgesetzt, in der Hoffnung, dass es diese Mal klappen wird.<br/>
+            Ich bin noch einmal Schritt für Schritt dem Tutorial gefolgt und siehe da, es hat funktioniert. <br/>
+            Ich konnte also endlich beginnen, dass Backend zu realisieren. Begonnen habe ich mit der Registration des Benutzers. <br/>
+            Im Internet habe ich haufenweise Codeteile gefunden, dementsprechend war dies auch kein grösseres Problem die Registration abzuschliessen.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>13.01.2017</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Mir ist leider aufgefallen, dass ich momentan bei der Registration das Passwort des Benutzer nicht hashe, <br/>
+            sondern es in Plain-Text auf die Datenbank speichere. Doch nach kurzem Googlen war auch dieses Problem sehr schnell behoben. <br/>
+            Flask bietet auch für dass einen sehr einfachen Weg, wie man ein Passwort hashen kann um es auf die Datenbank zu speichern. <br/>
+            Nachdem die Registration nun endgültig abgeschlossen war, habe ich mit dem Login weitergemacht. <br/>
+            Die Überprüfung des User geht auch sehr einfach und das gehashte Passwort kann man mit einer bereits <br/>
+            vorhandenen Methode überprüfen. Ich konnte noch kurz beginnen, ein Blog zu erstellen, doch bin ich nicht sehr weit gekommen.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>15.01.2017</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Ich habe mit dem erstellen des Blogs weitergemacht. Ich bin erstaunt, wie einfach alles geht mit Flask. Es wird so viel <br/>
+            schon für einen erledigt, da bin ich froh habe ich mich dafür entschieden. Ich konnte am Ende des Tages das <br/>
+            Projekt beinahe abschliessen. Der Benutzer kann sich registrieren und einlogen und als eingelogter Benutzer <br/>
+            kann er einen Blog erstellen. Um einen Blog zu lesen muss man nicht eingelogt sein. Ich muss noch einige <br/>
+            kleinere Dinge verbessern, sei es das Kommentieren des Codes oder einige optische Anpassungen im Frontend.<br/>
+            Es fehlt auch noch das Logging, doch dies sollte kein grösseres Problem sein.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>20.01.2017</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            In der letzten Woche vor der Abgabe habe ich mich nun daran gemacht, die Applikation fertigzustellen. Das Logging war schnell <br/>
+            und einfach eingebaut. Der ganze Log wird bereits auch in ein File gespeichert.<br/>
+            Ich musste mich noch daran machen, eine unsichere Art der Datenbank abfrage zu codieren. <br/>
+            Dies hat mir noch Mal einiges an Problemen bereitet, da ich es nicht hinbekommen habe, diese mit einer SQL-Injection zu überwinden.<br/>
+            Dies konnte ich leider nicht mehr in der Schule fertigstellen.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>22.01.2017</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Da ich nicht ganz fertig wurde und noch die Videos aufnehmen musste, habe ich am Sonntag noch zu Hause an der Applikation <br/>
+            gearbeitet. Als erstes habe ich das Video aufgenommen indem ich eine XSS Attacke simuliert habe.<br/>
+            Da Flask von Haus aus den Text escaped, musste ich noch das Attribut "safe" verwenden, welches den Input als <br/>
+            sicher einstuft und es deshalb nicht escaped wird. Das Video war schnell gemacht, anschliessend habe ich mich <br/>
+            wieder an das Problem mit SQL-Injection gemacht.<br/>
+            Nach einigen Tests mit verschiedenen Injection-Statements hat es dann doch geklappt. <br/>
+            Ich brauchte lediglich noch das Video aufzunehmen und mein Projekt war bereit für die Abgabe.
+            </p>
+         </div>
+      </div>
+
+      <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+         <div class="mdl-card__media mdl-color-text--grey-50">
+            <h3>Schlussfolgerung</h3>
+         </div>
+         <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+            <p>
+            Ich fand dieses Projekt eine gute Sache, denn somit konnten wir das gelernte direkt in die Praxis umsetzen. <br/>
+            Das wir die Programmiersprache und die Frameworks selber wählen konnten war für mich ein sehr grosser Pluspunkt. <br/>
+            Dadurch wurden wir nicht eingeschränkt, konnten unseren Favoriten selber bestimmen und die Motivation musste <br/>
+            nicht darunter leiden, dass man nun alles mit einer Programmiersprache machen musste, die uns nicht gefällt. <br/>
+            Ich denke ich habe meine Zeit sehr gut genutzt, auch wenn meine Probleme mit der Installation insbesondere, <br/>
+            konnte ich diese Zeit doch recht gut wieder beim programmieren aufholen. Meine Motivation war grösstenteils sehr hoch, <br/>
+            ebenso die Neugier etwas neues auszuprobieren. Sei es nun die Programmiersprache, Framework oder sonstiges. <br/>
+            Ich würde beim nächsten Mal alles wieder so machen, da mir meine Arbeitsaufteilung gefallen hat und eigentlich alles in der Schule erledigen konnte.
+            </p>
+         </div>
+      </div>
+
+   </div>
+
+   {% endblock body %}

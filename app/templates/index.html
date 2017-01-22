@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block  body %}
+
+<div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+
+      <div class="demo-blog__posts mdl-grid">
+         {% if session.get('logged_in') == True %}
+         <div class="mdl-cell mdl-cell--8-col mdl-cell--12-col-desktop">
+            <a href="/createBlog">
+               <button class="mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--fab mdl-color--accent">
+                  <i class="material-icons mdl-color-text--white" role="presentation">add</i>
+                  <span class="visuallyhidden">add</span>
+               </button>
+            </a>
+         </div>
+         {% endif %}
+         {% for blog in blog_list %}
+         <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+            <div class="mdl-card__media mdl-color-text--grey-50">
+               <h3><a href="{{ url_for('blog', blogId=blog.id) }}">{{ blog.title }}</a></h3>
+            </div>
+            <div class="mdl-color-text--grey-600 mdl-card__supporting-text">
+               {{ blog.text}}
+            </div>
+            <div class="mdl-card__supporting-text meta mdl-color-text--grey-600">
+               <div class="minilogo"></div>
+               <div>
+                  <strong>{{ blog.creator.first_name }} {{ blog.creator.last_name }}</strong>
+                  <span>2 days ago</span>
+               </div>
+            </div>
+         </div>
+         {% endfor %}
+      </div>
+
+</div>
+
+{% endblock body %}
