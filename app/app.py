@@ -8,6 +8,7 @@ from wtforms.validators import DataRequired, Email
 from werkzeug.security import generate_password_hash, check_password_hash
 import sqlite3
 import logging
+from logging.handlers import RotatingFileHandler
 import datetime
 import os
 
@@ -15,7 +16,6 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = 'asdwedfbgasdfasdfasdfasdfasdfasd'
 database = SqliteDatabase('blog_database.db')
-#logging.basicConfig(filename='blogapp.log',level=logging.INFO)
 
 """
     A few methods I copied from the Github repository of Flask. I will mark those methods with 2 stars(**)
@@ -111,7 +111,7 @@ def get_object_or_404(model, *expressions):
     try:
         return model.get(*expressions)
     except model.DoesNotExist:
-        logging.error('Could not get model because it does not exist: %s', model )
+        app.logger.error('Could not get model because it does not exist: %s', model )
         abort(404)
 
 # method for the start page. it returns all blog, that will be displayed on the start page.
@@ -158,13 +158,13 @@ def login():
 
             if check_password_hash(user.password, request.form['password']):
                 auth_user(user)
-                logging.info('User logged in with email: %s', request.form['email'] )
+                app.logger.info('User logged in with email: %s', request.form['email'] )
                 return redirect(url_for('index'))
             else:
                 flash('Login not correct')
-                logging.info('Login not correct for email: %s', request.form['email'] )
+                app.logger.info('Login not correct for email: %s', request.form['email'] )
         except User.DoesNotExist:
-            logging.info('User does not exist with email: %s', request.form['email'] )
+            app.logger.info('User does not exist with email: %s', request.form['email'] )
             flash('Login not correct')
 
     return render_template('login.html')
@@ -188,11 +188,11 @@ def register():
 
             # mark the user as being 'authenticated' by setting the session vars
             auth_user(user)
-            logging.info('New user registered with email: %s', request.form['email'] )
+            app.logger.info('New user registered with email: %s', request.form['email'] )
             return redirect(url_for('index'))
 
         except IntegrityError:
-            logging.error('Could not register user with email because it already exists: %s', request.form['email'] )
+            app.logger.error('Could not register user with email because it already exists: %s', request.form['email'] )
             flash('That email is already in use')
 
     return render_template('register.html')
@@ -210,7 +210,7 @@ def createBlog():
                                text=request.form['blog_text'],
                                creation_date=datetime.datetime.now())
 
-        logging.info('User created new blog with title %s', request.form['blog_title'] )
+        app.logger.info('User created new blog with title %s', request.form['blog_title'] )
         return redirect(url_for('index'))
 
     return render_template('createBlog.html')
@@ -252,5 +252,13 @@ def get_current_user():
 if __name__ == '__main__':
     #drop_tables()
     create_tables()
+
+    formatter = logging.Formatter(
+        "[%(asctime)s] {%(pathname)s:%(lineno)d} %(levelname)s - %(message)s")
+    handler = RotatingFileHandler('blogapp.log', maxBytes=10000000, backupCount=5)
+    handler.setLevel(logging.INFO)
+    handler.setFormatter(formatter)
+    app.logger.addHandler(handler)
+
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
