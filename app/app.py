@@ -69,7 +69,11 @@ class RegistrationForm(Form):
 # simple utility function to create tables **
 def create_tables():
     database.connect()
-    database.create_tables([User])
+    if User.table_exists() == False:
+        database.create_tables([User])
+
+    if Blog.table_exists() == False:
+        database.create_tables([Blog])
 
 # simple utility function to drop tables **
 def drop_tables():
@@ -247,6 +251,6 @@ def get_current_user():
 # allow running from the command line
 if __name__ == '__main__':
     #drop_tables()
-    #create_tables()
+    create_tables()
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=True, host='0.0.0.0', port=port)
